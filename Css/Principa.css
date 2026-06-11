@@ -1,0 +1,143 @@
+
+body {
+    background-color: #9cd1df;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.container {
+    width: 100%;
+    min-height: 100vh;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+}
+.header:hover {
+    transform: translate3d(0px, 10px, 0px);
+}
+.Titulo {
+    width: 95%;
+    background-color: #15535d;
+    text-align: center;
+    border-radius: 15px;
+    margin-top: 20px;
+}
+.H1 {
+    color: rgb(255, 255, 255);
+    padding-top: 10px;
+    font-style: italic;
+    margin-bottom: 5px;
+}
+.H3 {
+    padding-bottom: 15px;
+    color: #F5F7FA;
+    margin-top: 5px;
+}
+.Titulo span {
+    color: hsl(251, 26%, 45%);
+    animation: mudaCor 3s infinite linear;
+    animation-delay: calc(var(--i) * 0.4s);
+    display: inline-block;
+}
+.IMC, .k {
+    background-color: #caf8ff;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    border-radius: 15px;
+    margin: 20px 2.5%;
+    color: rgb(67, 130, 137);
+    padding: 20px; 
+}
+.Cur {
+    background-color: #95dae2;
+    display: flex;
+    align-items: center;
+    border-radius: 15px;
+    margin: 10px 2.5%;
+    padding: 10px 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    width: 90%;
+}
+.inf {
+    color: #15535d;
+    background-color: #caf8ff;
+    border-radius: 15px;
+    width: 95%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 20px 2.5%;
+    padding: 20px 0;
+}
+.ToSemCriatividade {
+    width: 100%;
+}
+.FotoImc {
+    border: 3px solid rgb(143, 177, 240);
+    border-radius: 15px;
+}
+.FotoCalorias {
+    border: 3px solid rgb(133, 199, 243);
+    border-radius: 15px;
+}
+.imgCortisol, .imgCaloria {
+    border-radius: 12px;
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+.azul { color: rgb(0, 140, 255); margin: 0; padding: 5px 0; font-weight: bold; }
+.verde { color: rgb(18, 192, 6); margin: 0; padding: 5px 0; font-weight: bold; }
+.amarelo { color: rgb(230, 230, 6); margin: 0; padding: 5px 0; font-weight: bold; }
+.laranja { color: rgb(255, 115, 0); margin: 0; padding: 5px 0; font-weight: bold; }
+.vermelho { color: red; margin: 0; padding: 5px 0; font-weight: bold; }
+.sendo { margin: 10px 0 5px 0; padding: 0; }
+.desta { color: #1d93a5; text-decoration: none; }
+.deste { color: #15535d; text-decoration: none; }
+.botaoContent {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    padding: 30px;
+}
+.botao {
+    background-color: rgb(111, 173, 192);
+    border-radius: 15px;
+    border: 2px solid rgb(87, 178, 253);
+    padding: 12px 28px;
+    color: rgb(61, 114, 228);
+    gap: 3px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    text-align: center;
+}
+.IMC, .k, .Cur, .Titulo, .botao {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0 4px 10px rgb(4, 32, 70);
+}
+.IMC:hover, .k:hover, .Cur:hover, .Titulo:hover, .botao:hover {
+    transform: translateY(-6px);
+    box-shadow:
+        0 15px 35px rgb(4, 32, 70),
+        0 0 15px rgba(88, 190, 230, 0.35);
+}
+.Cur:hover {
+    color: rgb(103, 162, 168);
+    background-color: rgb(250, 250, 250);
+}
+.botao:hover {
+    background-color: #91dce7;
+}
+@keyframes mudaCor {
+    0%, 100% { color: #3d8b99; }
+    50% { color: rgb(240, 240, 240); }
+}

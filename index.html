@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acessar - MCMSA</title>
+    <link rel="stylesheet" href="Css/indexStyle.css">   
+    <style>
+        .oculto {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container" style="display: flex; justify-content: center; align-items: center; min-height: 100vh; width: 100%;">
+
+        <div id="tela-login" class="cadastro">
+            <h2>Acessar Conta</h2>
+            <input class="campo" type="text" id="loginNome" placeholder="Nome de Usuário">
+            <input class="campo" type="password" id="loginSenha" placeholder="Sua Senha">
+            <button onclick="logar()" class="BotaoCadastrar">Entrar</button>
+            <p style="margin-top: 15px; font-size: 14px; color: #15535d; text-align: center; width: 100%;">
+                Não tem conta? <a href="#" onclick="alternarAbas('cadastro')" class="desta" style="font-weight: bold;">Cadastre-se aqui</a>
+            </p>
+        </div>
+
+        
+        <div id="cadastro" class="cadastro oculto">
+            <h2>Cadastro</h2>
+            <input class="campo" type="text" id="nome" placeholder="Nome">
+            <input class="campo" type="number" id="idade" placeholder="Idade">
+            <input class="campo" type="number" id="altura" placeholder="Altura (cm)">
+            <input class="campo" type="number" id="peso" placeholder="Peso (kg)">
+            <input class="campo" type="password" id="senha" placeholder="Senha">
+            <button class="BotaoCadastrar" onclick="cadastrar()">Cadastrar</button>
+            <p style="margin-top: 15px; font-size: 14px; color: #15535d; text-align: center; width: 100%;">
+                Já tem conta? <a href="#" onclick="alternarAbas('login')" class="desta" style="font-weight: bold;">Faça login</a>
+            </p>
+        </div>
+
+    </div>
+
+    <script>
+     
+
+        function alternarAbas(aba) {
+            const loginBox = document.getElementById('tela-login');
+            const cadastroBox = document.getElementById('cadastro');
+
+            if (aba === 'cadastro') {
+                loginBox.classList.add('oculto');
+                cadastroBox.classList.remove('oculto');
+            } else {
+                cadastroBox.classList.add('oculto');
+                loginBox.classList.remove('oculto');
+            }
+        }
+
+        function cadastrar() {
+            const nome = document.getElementById('nome').value;
+            const idade = document.getElementById('idade').value;
+            const altura = document.getElementById('altura').value;
+            const peso = document.getElementById('peso').value;
+            const senha = document.getElementById('senha').value;
+
+            if (nome && idade && altura && peso && senha) {
+                const contaUsuario = { nome, idade, altura, peso, senha };
+                localStorage.setItem('contaUsuario', JSON.stringify(contaUsuario));
+                alert('Cadastro efetuado! Faça login agora.');
+                alternarAbas('login');
+            } else {
+                alert('Preencha todos os campos do cadastro!');
+            }
+        }
+
+        function logar() {
+            const usuarioDigitado = document.getElementById('loginNome').value;
+            const senhaDigitada = document.getElementById('loginSenha').value;
+            const dadosSalvos = localStorage.getItem('contaUsuario');
+
+            if (!dadosSalvos) {
+                alert('Nenhum usuário registrado ainda! Clique em Cadastre-se aqui.');
+                return;
+            }
+
+            const contaUsuario = JSON.parse(dadosSalvos);
+
+            if (usuarioDigitado === contaUsuario.nome && senhaDigitada === contaUsuario.senha) {
+                localStorage.setItem('usuarioLogado', contaUsuario.nome);
+                
+                alert('Login correto! Redirecionando...');
+                
+                window.location.href = "Html/PaginaPrincipal.html";
+            } else {
+                alert('Incorreto! Nome ou senha errados.');
+            }
+        }
+    </script>
+
+</body>
+</html>

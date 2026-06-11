@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de IMC</title>
+<link rel="stylesheet" href="../Css/Calculadora.css">
+</head>
+
+<body>
+    <div class="secao">
+        <h3>Calculadora de IMC</h3>
+        <p>Qual Seu Gênero?</p>
+        <div class="genero">
+            <button class="masculino">Masculino</button>
+            <button class="feminino">Feminino</button>
+        </div>
+        <p>Qual Sua Idade?</p>
+        <input type="number" placeholder="Exemplo = 35 anos">
+        <p>Qual Sua Altura?</p>
+        <input type="number" id="peso" placeholder="Exemplo = 70 KG" step="0.1">
+        <p>Qual Seu Peso?</p>
+        <input type="number" id="altura" placeholder="Exemplo = 1,70 Metros" step="0.01">
+
+        <div class="botoes-container">
+            <button class="btn-calc" onclick="Calcular()">Calcular</button>
+            <button class="btn-voltar"><a href="PaginaPrincipal.html">Voltar</a></button>
+        </div>
+
+        <p id="resultado"></p>
+    </div>
+
+    <script>
+        function Calcular() {
+            const altInput = document.getElementById('altura').value;
+            const pesoInput = document.getElementById('peso').value;
+            const peso = parseFloat(pesoInput);
+            const altura = parseFloat(altInput);
+            const elementoResultado = document.getElementById('resultado');
+
+            if (!peso || !altura || altura <= 0) {
+                elementoResultado.innerText = "Valores inválidos";
+                elementoResultado.style.color = "black";
+                return;
+            }
+
+            const imc = peso / (altura * altura);
+            const imcFormatado = imc.toFixed(2);
+            let classificacao = "";
+            let cor = "";
+
+            if (imc < 18.5) {
+                classificacao = "Abaixo do peso";
+                cor = "#e67e22";
+            } else if (imc < 25) {
+                classificacao = "Peso normal";
+                cor = "#27ae60";
+            } else if (imc < 30) {
+                classificacao = "Sobrepeso";
+                cor = "#f1c40f";
+            } else if (imc < 40) {
+                classificacao = "Obesidade";
+                cor = "#e74c3c";
+            } else {
+                classificacao = "Obesidade Extrema";
+                cor = "#c0392b";
+            }
+
+            elementoResultado.innerText = `IMC: ${imcFormatado}\n(${classificacao})`;
+            elementoResultado.style.color = cor;
+        }
+    </script>
+</body>
+
+</html>
