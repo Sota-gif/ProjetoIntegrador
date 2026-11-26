@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCSM</title>
+    <link rel="stylesheet" href="../Css/Principa.css">
+</head>
+
+<body>
+
+    <div id="areaUsuario" style="display:none;">
+        <h2>Bem-vindo(a), <span id="userNome"></span></h2>
+        
+        <div class="container">
+            <div class="header">
+                <div class="Titulo">
+                    <h1 class="H1">
+                        <span style="--i:1">M</span>
+                        <span style="--i:2">C</span>
+                        <span style="--i:3">M</span>
+                        <span style="--i:4">S</span>
+                        <span style="--i:5">A</span>
+                    </h1>
+                    <h3 class="H3">
+                        Monitoramento Calórico por Meio de um Site em Aplicação
+                    </h3>
+                </div>
+            </div>
+
+            <div class="IMC">
+                <div class="FotoImc">
+                    <img class="imgCortisol" src="../Imgs/IMC.png">
+                </div>
+                <div class="text">
+                    <h2>
+                        <a class="deste" href="../Html/CalculadoraDeIMC.html" target="_blank">
+                            Calcule Seu IMC
+                        </a>
+                    </h2>
+                    <p>
+                        O IMC é um cálculo utilizado para avaliar se uma pessoa está dentro do peso ideal.
+                    </p>
+                    <h2 class="sendo">Sendo:</h2>
+                    <p class="azul">Azul abaixo do peso &lt; 18.5</p>
+                    <p class="verde">Verde normal 18.5 a 24.9</p>
+                    <p class="amarelo">Amarelo sobrepeso 25.0 a 29.9</p>
+                    <p class="laranja">Laranja obesidade 30.0 a 39.9</p>
+                    <p class="vermelho">Vermelho obesidade severa ≥ 40</p>
+                    <h5>
+                        <a class="desta" href="../Html/CalculadoraDeIMC.html">
+                            Clique Aqui Ou No Título
+                        </a>
+                    </h5>
+                </div>
+            </div>
+
+            <div class="k">
+                <div class="FotoCalorias">
+                    <img class="imgCaloria" src="../Imgs/kcal.png">
+                </div>
+                <div class="text">
+                    <h2>
+                        <a class="deste" href="../Html/PI.html">
+                            Calorias Perdidas
+                        </a>
+                    </h2>
+                    <p>
+                        Descubra uma estimativa de calorias perdidas após corrida ou caminhada.
+                    </p>
+                    <h5>
+                        <a class="desta" href="../Html/PI.html">
+                            Clique Aqui Ou No Título
+                        </a>
+                    </h5>
+                </div>
+            </div>
+        </div>
+
+        <div class="inf">
+            <div class="ToSemCriatividade">
+                <h1>Curiosidades</h1>
+                <div class="Cur">
+                    <h3>Corpo humano é uma máquina cheia de processos surpreendentes.</h3>
+                </div>
+                <div class="Cur">
+                    <p>O masseter é o músculo mais forte do corpo humano.</p>
+                </div>
+                <div class="Cur">
+                    <p>Uma pessoa média dá cerca de 7.500 passos por dia.</p>
+                </div>
+                <div class="Cur">
+                    <p>O corpo produz cerca de 1 litro de saliva diariamente.</p>
+                </div>
+                <div class="Cur">
+                    <p>O cérebro consome aproximadamente 20% da energia do corpo.</p>
+                </div>
+                <div class="Cur">
+                    <p>O coração bate cerca de 100 mil vezes por dia.</p>
+                </div>
+                <div class="Cur">
+                    <p>Ossos humanos são extremamente resistentes.</p>
+                </div>
+                <div class="Cur">
+                    <p>A pele se renova constantemente.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="botaoContent">
+            <a class="botao" href="https://www.gov.br/saude/pt-br/assuntos/saude-brasil" target="_blank">
+                <span>Clique</span> <span>Aqui</span> <span>Para</span> <span>Mais</span> 
+                <span>Dicas</span> <span>De</span> <span>Saúde</span>
+            </a>
+        </div>
+
+    </div>
+    <script>
+        window.onload = function() {
+            const usuarioLogado = localStorage.getItem('usuarioLogado');
+            const areaUsuario = document.getElementById('areaUsuario');
+            const userNome = document.getElementById('userNome');
+
+            if (usuarioLogado) {
+                userNome.textContent = usuarioLogado; 
+                areaUsuario.style.display = 'block';  
+            } else {
+                alert('Acesso negado! Por favor, faça login primeiro.');
+                window.location.href = "../index.html"; 
+            }
+        }
+    </script>
+
+</body>
+</html>
