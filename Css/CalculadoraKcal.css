@@ -1,95 +1,137 @@
-body { 
-      font-family: sans-serif; 
-      padding: 20px;
-      max-width: 800px; 
-      margin: auto; 
-      background-color: #9cd1df;
-    }
-    .container {
-      background: #caf8ff;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 6px rgba(4, 63, 9, 0.1);
-    }
-    h2 { color: #333; text-align: center; }
-    
-    input, button { 
-      display: block;
-      margin: 10px 0; 
-      padding: 12px; 
-      width: 100%; 
-      box-sizing: border-box; 
-      border-radius: 6px;
-      border: 1px solid  #95dae2;
-    }
-    
-    button { 
-      cursor: pointer; 
-      background: #9cd1df;; 
-      color: rgb(0, 0, 0); 
-      border: none; 
-      font-weight: bold;
-    }
-    
-    button:hover { background: #95dae2; }
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
-    table { 
-      width: 100%; 
-      border-collapse: collapse;
-      margin-top: 15px; 
-    }
-    
-    th, td { 
-      border: 1px solid  #95dae2; 
-      padding: 12px; 
-      text-align: center; 
-    }
-    
-    th { background-color: #91ebe3; }
+* {
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
 
-    .secao {
-      margin-bottom: 20px; 
-      padding: 15px;
-      border: 1px solid   #95dae2;
-      border-radius: 8px;
-    }
-    .secao1 {
-      margin-bottom: 20px; 
-      padding: 15px;
-      border: 1px solid  #95dae2;
-      border-radius: 8px;
-    }
-    .secao2 {
-      margin-bottom: 20px; 
-      padding: 15px;
-      border: 1px solid  #95dae2;
-      border-radius: 8px;
-    }
+body {
+    background: linear-gradient(135deg, #8ec5d6 0%, #598ab7 100%);
+    min-height: 100vh;
+    margin: 0;
+    padding: 30px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
 
-    .volte {
-      margin-top: 20px;
-      text-align: center;
-      background-color: #95dae2;
-      padding: 15px;
-      border-radius: 15px;
-    }
+.container {
+    background: #ffffff;
+    width: 100%;
+    max-width: 650px;
+    padding: 35px 30px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(15, 45, 75, 0.2);
+}
 
-    .volte a {
-      text-decoration: none;
-      color: #15535d;
-      font-weight: bold;
-      transition: 0.3s;
-      display: inline-block;
-    }
+h2 {
+    color: #15535d;
+    text-align: center;
+    margin: 0 0 24px 0;
+    font-size: 1.7rem;
+}
 
-    .desta:hover {
-      transform: scale(1.1);
-      color:  #425c5f;
-    }
+h3 {
+    color: #15535d;
+    margin: 0 0 12px 0;
+    font-size: 1.1rem;
+}
 
-    .resumo-hoje {
-      font-size: 1.2rem;
-      color: #5daa6f;
-      font-weight: bold;
-      text-align: center;
-    }
+.secao, .secao1, .secao2 {
+    background: #f8fafc;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 20px;
+    margin-bottom: 18px;
+}
+
+input {
+    width: 100%;
+    padding: 12px 14px;
+    margin-bottom: 12px;
+    border: 1.5px solid #cbd5e1;
+    border-radius: 10px;
+    font-size: 1rem;
+    background: #ffffff;
+}
+
+input:focus {
+    outline: none;
+    border-color: #1d93a5;
+    box-shadow: 0 0 0 4px rgba(29, 147, 165, 0.15);
+}
+
+button {
+    width: 100%;
+    padding: 13px;
+    border: none;
+    border-radius: 10px;
+    background: #15535d;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+button:hover {
+    background: #1d93a5;
+    transform: translateY(-2px);
+}
+
+.resumo-hoje {
+    font-size: 1.25rem;
+    color: #16a34a;
+    font-weight: 700;
+    text-align: center;
+    margin: 14px 0 0 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 16px;
+    background: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #e2e8f0;
+    font-size: 0.95rem;
+}
+
+th {
+    background-color: #15535d;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+tr:nth-child(even) {
+    background-color: #f1f5f9;
+}
+
+.volte {
+    margin-top: 24px;
+    text-align: center;
+}
+
+.volte a {
+    display: inline-block;
+    width: 100%;
+    padding: 14px;
+    background: #f1f5f9;
+    border: 1.5px solid #cbd5e1;
+    border-radius: 12px;
+    color: #334155;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.volte a:hover {
+    background: #e2e8f0;
+    color: #0f172a;
+}
