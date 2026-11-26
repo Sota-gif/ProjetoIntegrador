@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora de IMC</title>
-<link rel="stylesheet" href="../Css/CalculadoraIMC.css">
+    <link rel="stylesheet" href="../Css/CalculadoraIMC.css">
 </head>
 
 <body>
@@ -34,7 +34,6 @@
 
     <script>
         function Calcular() {
-            // Agora os IDs buscam os valores corretos
             const altInput = document.getElementById('altura').value;
             const pesoInput = document.getElementById('peso').value;
             
@@ -48,8 +47,6 @@
                 return;
             }
 
-            // AJUSTE: Se o usuário digitar a altura em centímetros (ex: 170), 
-            // dividimos por 100 para transformar em metros (1.70)
             if (altura > 3) { 
                 altura = altura / 100;
             }
@@ -80,7 +77,5 @@
             elementoResultado.style.color = cor;
         }
     </script>
-   
 </body>
-
 </html>
